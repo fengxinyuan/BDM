@@ -9,15 +9,16 @@
 如果您在研究中发现 BDM 有用，请考虑引用我们的论文：
 
 ```bibtex
-@inproceedings{yourlastname_sigir24_bdm,
-  author    = {Author, First and Coauthor, First}, % TODO: Please replace with actual author names
+@inproceedings{10.1145/3626772.3657687,
+  author    = {Liang, Chunquan and Wang, Yifan and Chen, Qiankun and Feng, Xinyuan and Wang, Luyue and Li, Mei and Zhang, Hongming},
   title     = {Bootstrap Deep Metric for Seed Expansion in Attributed Networks},
   booktitle = {Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR '24)},
   year      = {2024},
   publisher = {ACM},
   doi       = {10.1145/3626772.3657687},
-  % pages    = {xxx-yyy}, % TODO: Add page numbers if available
-  % location = {Washington D.C., USA}, % TODO: Add conference location if desired
+  pages = {1629–1638},
+  numpages = {10},
+  location = {Washington DC, USA}, 
 }
 ```
 
@@ -54,10 +55,4 @@ python run_bdm.py -d 'Cora' -c 0 -s 1 -u 'False'
 - `-s`: 随机种子集的大小。
 - `-u`: 是否使用高维节点特征作为种子节点 (True/False)。
 
-## 更新日志 (Change Log)
 
-*待更新 (To be updated)*
-
-## 相关参考 (Reference)
-
-*待更新 (To be updated)*
