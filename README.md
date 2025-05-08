@@ -1,23 +1,63 @@
-# Bootstrap Deep Metric for Seed Expansion in Attributed Networks
-This repository is an implementation of a graph deep metric learning framework for seed expansion problems:
-## Overview of BDM framework:
-![image](https://github.com/user-attachments/assets/7c5783a5-d6b4-4751-9a14-0867d96f3a63)
+# Bootstrap Deep Metric for Seed Expansion in Attributed Networks (BDM)
 
-*This figure is overview of BDM framework. Upper layer: the main idea to use deep metric for seed expansion. We map the network’s topological structure and node content into a representation space such that community members are close to each other while non-members are distant. Subsequently, we select the nodes near the approximated community center as the expansion nodes. Lower layer: BDM trains its main mapping 𝑓𝜃 by minimizing metric losses between the produced positive-anchor 𝑎^𝑃 and representations of positive nodes in 𝐻e𝜃, as well as between self-anchors 𝐻e𝜙 and representations of each node in 𝐻e𝜃, where 𝜃 and 𝜙 are learnable parameters. The parameter 𝜙 of auxiliary mapping 𝑓𝜙 is updated as a slow-moving average of 𝜃. Here, sg means stop-gradient.*
+## 简介 (Introduction)
 
-## Requirements
-- numpy==1.24.3
-- scikit-learn==1.3.1
-- torch==2.0.1
-- torch_geometric==2.3.0
+本项目是论文 **"Bootstrap Deep Metric for Seed Expansion in Attributed Networks" (BDM)** 的官方实现，该论文发表于 SIGIR 2024。BDM 是一个新颖的图深度度量学习框架，专为解决属性网络中的种子扩展问题而设计。该框架通过学习一种映射，将网络的拓扑结构和节点内容投影到一个表示空间中，使得社区成员在空间中彼此靠近，而非成员则相互远离。基于此表示空间，BDM 能够有效地从一小组种子节点出发，识别并扩展社区成员。
 
+## 引用 (Citation)
 
-## Usage
-run BDM demo by: 
-```python run_bdm.py -d 'Cora' -c 0 -s 1 -u 'False'``` 
-where -d represents the used dataset, and -c denotes the index of label to be used as positive, -s indicates the size of the random seed, and -u indicates whether to use a high-dimensional node as the seed node.
+如果您在研究中发现 BDM 有用，请考虑引用我们的论文：
 
-## Change Log
-To be updated
-## Reference
-To be updated
+```bibtex
+@inproceedings{yourlastname_sigir24_bdm,
+  author    = {Author, First and Coauthor, First}, % TODO: Please replace with actual author names
+  title     = {Bootstrap Deep Metric for Seed Expansion in Attributed Networks},
+  booktitle = {Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR '24)},
+  year      = {2024},
+  publisher = {ACM},
+  doi       = {10.1145/3626772.3657687},
+  % pages    = {xxx-yyy}, % TODO: Add page numbers if available
+  % location = {Washington D.C., USA}, % TODO: Add conference location if desired
+}
+```
+
+**论文链接:**
+[Bootstrap Deep Metric for Seed Expansion in Attributed Networks](https://dl.acm.org/doi/10.1145/3626772.3657687)
+*Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR '24)*
+
+## BDM 框架概览 (Overview of BDM Framework)
+
+BDM 框架的核心思想和主要组件如下图所示：
+
+![BDM Framework Overview](https://github.com/user-attachments/assets/7c5783a5-d6b4-4751-9a14-0867d96f3a63)
+
+*图注：BDM 框架概览。上层：使用深度度量进行种子扩展的核心思想。我们将网络的拓扑结构和节点内容映射到一个表示空间，使得社区成员彼此靠近，而非社区成员则相互远离。随后，我们选择靠近近似社区中心的节点作为扩展节点。下层：BDM 通过最小化产生的正样本锚点 $a^P$ 与 $H_{e\theta}$ 中正样本节点表示之间的度量损失，以及自锚点 $H_{e\phi}$ 与 $H_{e\theta}$ 中各节点表示之间的度量损失，来训练其主映射 $f_{\theta}$，其中 $\theta$ 和 $\phi$ 是可学习的参数。辅助映射 $f_{\phi}$ 的参数 $\phi$ 作为 $\theta$ 的慢速移动平均值进行更新。此处，sg 表示停止梯度（stop-gradient）。*
+
+## 环境要求 (Requirements)
+
+- `numpy==1.24.3`
+- `scikit-learn==1.3.1`
+- `torch==2.0.1`
+- `torch_geometric==2.3.0`
+
+## 使用方法 (Usage)
+
+通过以下命令运行 BDM 演示：
+
+```python
+python run_bdm.py -d 'Cora' -c 0 -s 1 -u 'False'
+```
+
+参数说明：
+- `-d`: 使用的数据集名称 (e.g., 'Cora', 'CiteSeer', 'PubMed')。
+- `-c`: 用作正样本的标签索引。
+- `-s`: 随机种子集的大小。
+- `-u`: 是否使用高维节点特征作为种子节点 (True/False)。
+
+## 更新日志 (Change Log)
+
+*待更新 (To be updated)*
+
+## 相关参考 (Reference)
+
+*待更新 (To be updated)*
