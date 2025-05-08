@@ -4,6 +4,11 @@
 
 本项目是论文 **"Bootstrap Deep Metric for Seed Expansion in Attributed Networks" (BDM)** 的官方实现，该论文发表于 SIGIR 2024。BDM 是一个新颖的图深度度量学习框架，专为解决属性网络中的种子扩展问题而设计。该框架通过学习一种映射，将网络的拓扑结构和节点内容投影到一个表示空间中，使得社区成员在空间中彼此靠近，而非成员则相互远离。基于此表示空间，BDM 能够有效地从一小组种子节点出发，识别并扩展社区成员。
 
+**论文链接:**
+[Bootstrap Deep Metric for Seed Expansion in Attributed Networks](https://dl.acm.org/doi/10.1145/3626772.3657687)
+*Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR '24)*
+
+
 ## 引用 (Citation)
 
 如果您在研究中发现 BDM 有用，请考虑引用我们的论文：
@@ -14,17 +19,13 @@
   title     = {Bootstrap Deep Metric for Seed Expansion in Attributed Networks},
   booktitle = {Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR '24)},
   year      = {2024},
-  publisher = {ACM},
+  publisher = {Association for Computing Machinery},
   doi       = {10.1145/3626772.3657687},
   pages = {1629–1638},
   numpages = {10},
   location = {Washington DC, USA}, 
 }
 ```
-
-**论文链接:**
-[Bootstrap Deep Metric for Seed Expansion in Attributed Networks](https://dl.acm.org/doi/10.1145/3626772.3657687)
-*Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR '24)*
 
 ## BDM 框架概览 (Overview of BDM Framework)
 
